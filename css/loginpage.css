@@ -1,0 +1,97 @@
+/* this style sheet is only for login interface */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #4b809e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0 20px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.login-title {
+    font-size: 28px;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.register {
+    font-size: 18px;
+}
+
+.register-link{
+    color:#467692;
+    text-decoration: none;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.container {
+    padding: 16px;
+    position: relative;
+    background-color:#f1f1f1"
+}
+
+/*The Modal (background)*/
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}  
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+} 
+
+.success{
+    color: #09ff00;
+    margin: 10px 0;
+}
+
+.error {
+    color: #ff4040;
+    margin: 10px 0;
+}
+
+.cancel {
+    text-decoration: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    padding: 10px 18px;
+    background-color: #bb9161;
+}
+
+.container-cancel {
+    padding: 10px 20px 30px 20px;
+}

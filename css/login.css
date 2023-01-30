@@ -1,0 +1,153 @@
+/* this is the style sheet for all pages of user account after login */
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content:space-between;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+a{
+    display: block;
+    color: #333;
+    padding: 16px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* add underline to the selected link */
+.active {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+}
+
+aside {
+    width: 20vw;
+}
+
+aside ul{
+    flex-direction: column;
+}
+
+/* ------------------------------------------------------------------ */
+
+fieldset {
+    width: 500px;
+    padding: 5px;
+    margin: 20px 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+legend {
+    padding: 0;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+input {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.btn-primary {
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    margin: 2% 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #09ff00;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 2%;
+}
+
+.btn-danger {
+    background-color: #ff4040;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 2%;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-danger:hover {
+    text-decoration: none;
+}
+
+#add-address {
+    width: 100px;
+}
+
+.address-table {
+    width: 60vw;
+}
+
+.order-details {
+    width: 80vw;
+}
+
+.address-table tr th, .order-details tr th{
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+.actions{
+    display: flex;
+}
+
+.error{
+    color: #ff4040;
+    margin: 10px 0;
+}
+.success{
+    color: #09ff00;
+    margin: 10px 0;
+}
+
+
+/* -------------------------------------------------------- */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.business-list {
+    align-items: center;
+}
+
+footer a{
+    padding: 10px 20px 10px 10px;
+    margin: 20px 5px 10px 5px;
+    font-size: 12px;
+}
+

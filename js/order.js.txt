@@ -1,0 +1,182 @@
+// access basket data in the localStorage
+var basket = JSON.parse(localStorage.getItem("basket")) || [];
+
+// get order table in the form
+var itemTable = document.getElementById("item-table");
+
+// populate order table with items added to the shopping bag
+var orderItems = ()=>{
+    basket.map((x)=>{
+        let {id, item} = x;
+        let search = shopData.find((item) => item.id == id) || [];
+        let row = itemTable.insertRow(1);
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+        let cell4 = row.insertCell(3);
+        cell1.innerHTML = `<td>${search.brand+"<br>"+search.name}<input type="hidden" name="id" value="${id}"></td>`;
+        cell2.innerHTML = `<td>${item}<input type="hidden" name="quantity" value="${item}"></td>`;
+        cell3.innerHTML = `<td>$${search.price}</td>`;
+        cell4.innerHTML = `<td>$${search.price * item}</td>`;
+    });
+};
+
+orderItems();
+
+// function to update the number of item type in the cart
+var calculationCartAmount = () => {
+    document.getElementById("shoppingbag").innerHTML = `Shopping Bag${basket.length===0? "":"("+basket.length+")"}`;
+};
+calculationCartAmount();
+
+// calculate total using reduce
+var totalAmount = () => {
+    let amount = basket.map((x)=>{
+        let {id, item} = x;
+        let search = shopData.find(y=>y.id == id) || [];
+        return item * search.price;
+    }).reduce((x,y)=>x+y,0);
+    document.getElementById("total").innerHTML = `$${amount}<input type="hidden" name="total" value="${amount}">`;
+};
+totalAmount();
+
+
+
+// ===============================order form validation==========================================
+
+// get all form elements by id
+let emailInput = document.getElementById("email");
+let nameInput = document.getElementById("name");
+let addressInput = document.getElementById("address");
+let postcodeInput = document.getElementById("postcode");
+
+// set error message
+let error = "";
+
+
+// create place for error to display
+let emailError = document.createElement("span");
+emailError.classList.toggle("warning");
+document.getElementById("emailCell").append(emailError);
+let nameError = document.createElement("span");
+nameError.classList.toggle("warning");
+document.getElementById("nameCell").append(nameError);
+let addressError = document.createElement("span");
+addressError.classList.toggle("warning");
+document.getElementById("addressCell").append(addressError);
+let postcodeError = document.createElement("span");
+postcodeError.classList.toggle("warning");
+document.getElementById("postcodeCell").append(postcodeError);
+
+
+// email structure xyz@xyz.xyz
+let validateEmail = ()=>{
+    let emailRegExp = /\S+@\S+\.\S+/;
+    if(emailRegExp.test(emailInput.value)) {
+        error = "";
+    } else {
+        error = "Email address should be non-empty with the format xyz@xyz.xyz.";
+    }
+    return error;
+};
+
+// name should be non-empty and less than 20 characters long
+let validateName = ()=>{
+    if(nameInput.value==="" || nameInput.value.length>20){
+        error = "Name should be non-empty, and within 20 characters long.";
+    } else {
+        error = "";
+    }
+    return error;
+};
+
+// postcode should be A1A 1A1
+let validatePostcode = ()=>{
+    let postRegExp = /[A-Z][0-9][A-Z]\s[0-9][A-Z][0-9]/;
+    if(postRegExp.test(postcodeInput.value)){
+        error = "";
+    } else{
+        error = "Postcode should be A1A 1A1";
+    }
+    return error;
+};
+
+// shipping address should not be empty 
+let validateAddress = ()=>{
+    if(addressInput.value===""){
+        error = "Shipping address should not be empty";
+    } else{  
+        error = "";
+    }
+    return error;
+};
+
+
+ // all checks must be passed then submit the form, otherwise display the corresponding error messages
+let validate = ()=>{
+    let validationStatus = true;
+    if(validateEmail()!==""){
+        emailError.innerHTML = "<span>&#10006;&nbsp;</span>" + error;
+        emailInput.style.borderColor="red";  
+        validationStatus = false;
+    } 
+    if(validateName()!==""){
+        nameError.innerHTML = "<span>&#10006;&nbsp;</span>" + error;
+        nameInput.style.borderColor="red";
+        validationStatus = false;
+    }
+    if(validateAddress()!==""){
+        addressError.innerHTML = "<span>&#10006;&nbsp;</span>" + error;
+        addressInput.style.borderColor="red";
+        validationStatus = false;
+    }
+    if(validatePostcode()!==""){
+        postcodeError.innerHTML = "<span>&#10006;&nbsp;</span>" + error;
+        postcodeInput.style.borderColor="red";
+        validationStatus = false;
+    }
+
+    return validationStatus;
+};
+
+// reset the form and remove all warnings
+document.forms[0].addEventListener("reset",()=>{
+    emailError.textContent = "";
+    nameError.textContent = "";
+    addressError.textContent = "";
+    postcodeError.textContent = "";
+    emailInput.style.borderColor="";
+    nameInput.style.borderColor="";
+    postcodeInput.style.borderColor=""; 
+    addressInput.style.borderColor="";
+});
+
+// validate email input when the input loses focus if you entered correct email,the error paragraph with be empty
+emailInput.addEventListener("blur",()=>{
+    if(validateEmail() === ""){
+        emailError.textContent = "";
+        emailInput.style.borderColor="";
+    }
+});
+// name blur event
+nameInput.addEventListener("blur",()=>{
+    if(validateName() === ""){
+        nameError.textContent = "";
+        nameInput.style.borderColor="";
+    }
+});
+// shipping address blur event
+addressInput.addEventListener("blur",()=>{
+    if(validateAddress() === ""){
+        addressError.textContent = "";
+        addressInput.style.borderColor=""; 
+    }
+});
+// postcode blur event
+postcodeInput.addEventListener("blur",()=>{
+    if(validatePostcode() === ""){
+        postcodeError.textContent = "";
+        postcodeInput.style.borderColor="";
+    }
+});
+

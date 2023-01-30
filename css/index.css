@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+/* -------------------------------header------------------------------ */
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+  padding: 10px 20px 10px 10px;
+  margin: 20px 5px 10px 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------main section--------------------------- */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.cover img { 
+  background-size: cover;
+  height: 530px;
+  width: 90vw;
+}
+
+h3 {
+  color: black;
+  width: 200px;
+  font-size: 40px;
+  font-family: roboto condensed, sans-serif;
+  background-color: white;
+  text-align: center;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: roboto condensed, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.image1 {
+  border: 1px solid darkgray;
+  box-shadow: 1px 2px 4px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.image1:hover {
+  box-shadow: 1px 3px 9px;
+  color: #9e7419;
+}
+
+.image2 {
+  border: 1px solid darkgray;
+  box-shadow: 1px 2px 4px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.image2:hover {
+  box-shadow: 1px 3px 9px;
+  color: #6c7ae0;
+}
+/* --------------------footer---------------------------- */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+
+footer li {
+  display: inline;
+  padding: 10px 20px 10px 10px;
+  margin: 20px 5px 10px 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;
+}
+
+/* active class added to the selected link showing user where you are */
+.active {
+  text-decoration: underline;
+}
+
+/* -----------------------newsletter popup------------------------------ */
+#parent {
+  position: relative;
+  display: inline-block;
+}
+
+.myForm {  
+  text-align: center;
+  border: 1px solid;
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  width: 400px;
+  bottom: 30px;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#errors { color: red; }
+
+#email {
+  padding: 10px;
+  width: 70%;
+  margin-top: 20px;
+}
+
+.category{
+  margin: 10px auto;
+}
+
+.errormessage {
+  color: #ff3860;
+}
+
+.show {
+  display:block;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Shu Bo">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <title>Menswear</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="header-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="menswear.html">Menswear</a></li>
+                <li><a href="womenswear.html">Womenswear</a></li>
+            </ul>
+        </nav>
+        <div class="imge-wrapper">
+            <img src="images/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul class="header-list">
+                <li><a id="login" href="loginpage.php">Login</a></li>
+                <li><a id="shoppingbag" href="shoppingbag.html">Shopping Bag</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <!-- filter side bar -->
+            <ul class="brand-selector">
+                <li><button id="all-brands">All Brands</button></li>
+                <li><button id="adidas-originals">Adidas Originals</button></li>
+                <li><button id="bape">BAPE</button></li>
+                <li><button id="essentials">Essentials</button></li>
+            </ul>
+        </aside>
+        <section>
+            <div class="search-wrapper">
+                <!-- search bar -->
+                <input id="search" type="text" placeholder="Search.." size="30">
+            </div>
+
+            <div class="shop-items">
+                <!-- insert item from data.js -->
+            </div>    
+        </section>
+    </main>
+
+    <footer>
+        <ul class="business-list">
+            <li><a href="">COUNTRY/REGION: CANADA</a></li>
+            <li id="parent">
+                <a id="newsLetter" href="">NEWSLETTER SIGNUP</a>
+                <!-- popup form for signup newsletter -->
+                <div class="myForm" id="dropdown">
+                    <form action="newsletterprocess.php" method="POST" onsubmit="return validate();">
+                        <div class="textfield">
+                            <label for="email">Sign up for email and promotions</label>
+                            <input type="text" id="email" name="email" placeholder="Email">
+                        </div>
+                        <table class="category">
+                            <tr>
+                            <td>
+                                <input type="radio" name="category" value="menswear"> Menswear
+                                <input type="radio" name="category" value="womenswear" checked> Womenswear
+                            </td>
+                            </tr>
+                        </table>
+                        <button name="submit" type="submit">SUBSCRIBE</button>
+                        <p>You may unsubscribe at any time.</p>
+                    </form>
+                </div>
+            </li>
+            <li><a href="">CUSTOMER CARE</a></li>
+            <li><a href="">ABOUT US</a></li>
+        </ul>
+        <ul class="social-list">
+            <li><a href="https://www.youtube.com" target="_blank"><i class="uil uil-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="uil uil-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/" target="_blank"><i class="uil uil-twitter"></i></a></li>
+        </ul>
+    </footer>
+</body>
+<script src="js/data.js"></script>
+<script src="js/shopmen.js"></script>
+</html>

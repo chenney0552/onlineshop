@@ -1,0 +1,123 @@
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #4b809e;
+    color: white;
+    padding-top: 10px;
+    padding: 14px 20px;
+    margin: 10px 0 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .register-title {
+    font-size: 40px;
+    margin:30px 0 0 0;
+  }
+
+  .member {
+    font-size: 18px;
+  }
+
+  .login-link{
+    color:#467692;
+    text-decoration: none;
+  }
+
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 0;
+    position: relative;
+  }
+
+  .container {
+    position: relative;
+    background-color:#f1f1f1"
+  }
+
+  .formcontainer{
+    border: 2px;
+    border-style: solid;
+    padding: 40pt;
+    padding-top: 0pt;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    width: 80%;
+  }
+
+  .textfield{
+    width:100%;
+    font-size: 12pt;
+    padding: 0;
+    position: relative;
+  }
+
+
+  #email {
+    font-size: 10pt;
+    margin-top: 10pt;
+    width:100%;
+    padding:5pt;
+  }
+
+  #login{
+    font-size: 10pt;
+    margin-top: 10pt;
+    width:100%;
+    padding:5pt;
+  }
+
+  #pass{
+    font-size: 10pt;
+    margin-top: 10pt;
+    width:100%;
+    padding:5pt;
+  }
+
+  #pass2{
+    font-size: 10pt;
+    margin-top: 10pt;
+    width:100%;
+    padding:5pt; 
+  }
+
+  .button_reset{
+    width: auto;
+    padding: 10px 18px;
+    background-color: #bb9161;
+    margin-top: 20px; 
+  } 
+
+  .warning{
+    color: red;
+  }
+
+  .link_cancel{
+    text-decoration: none;
+    width: auto;
+    padding: 10px 18px;
+    background-color: #bb9161;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    font-family:sans-serif;
+  }

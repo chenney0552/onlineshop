@@ -1,0 +1,2 @@
+let basket = JSON.parse(localStorage.getItem("basket")) || [];
+document.getElementById("shoppingbag").innerHTML = `Shopping Bag${basket.length===0? "":"("+basket.length+")"}`;

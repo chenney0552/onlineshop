@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Shu Bo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Order Form</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="header-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menswear.html">Menswear</a></li>
+                <li><a href="womenswear.html">Womenswear</a></li>
+            </ul>
+        </nav>
+        <div class="imge-wrapper">
+            <img src="images/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul class="header-list">
+                <li><a id="login" href="loginpage.php">Login</a></li>
+                <li><a id="shoppingbag" class="active" href="shoppingbag.html">Shopping Bag</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="orderform">
+        <h1>Order Form</h1>
+        <form action="confirmation.php" method="post" onsubmit="return validate();">
+            <fieldset id="basic-info">
+                <legend>Basic Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td id="nameCell"><input type="text" id="name" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td id="emailCell"><input type="text" id="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Shipping Address:</label></td>
+                        <td id="addressCell"><input type="text" id="address" name="address"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="postcode">Postcode:</label></td>
+                        <td id="postcodeCell"><input type="text" id="postcode" name="postcode"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset id="order-info">
+                <legend>Order</legend>
+                <table id="item-table">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Subtotal</th>
+                    </tr>
+
+                    <!-- insert by js based on items in the shopping bag -->
+
+                    <tr>
+                        <td colspan="3">Total</td>
+                        <td id="total"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset id="pay-info">
+                <legend>Payment</legend>
+                <table>
+                    <tr>
+                        <td><label for="cardnumber">Card Number:</label></td>
+                        <td id="cardCell"><input type="number" id="cardnumber" name="cardnumber" maxlength="16"></td>
+                    </tr>
+                    <tr>
+                        <td>Card Type:</td>
+                        <td id="typeCell">
+                            <input type="radio" name="cardtype" id="mastercard" value="Mastercard" checked><label for="mastercard">Mastercard</label>
+                            <input type="radio" name="cardtype" id="visa" value="Visa"><label for="visa">Visa</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="expiredate">Expire Date:</label></td>
+                        <td id="expireCell"><input type="date" name="expiredate" id="expiredate"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cvv">CVV:</label></td>
+                        <td id="cvvCell"><input type="number" name="cvv" id="cvv" maxlength="3"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <div id="order-btn">
+                <button id="submit" name="submit" type="submit">SUBMIT</button>
+                <button id="reset" type="reset">RESET</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <ul class="business-list">
+            <li><a href="">COUNTRY/REGION: CANADA</a></li>
+            <li>
+                <a id="newsLetter" href="">NEWSLETTER SIGNUP</a>
+            </li>
+            <li><a href="">CUSTOMER CARE</a></li>
+            <li><a href="">ABOUT US</a></li>
+        </ul>
+        <ul class="social-list">
+            <li><a href="https://www.youtube.com" target="_blank"><i class="uil uil-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="uil uil-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/" target="_blank"><i class="uil uil-twitter"></i></a></li>
+        </ul>
+    </footer>
+</body>
+<script src="js/data.js"></script>
+<script src="js/order.js"></script>
+</html>
